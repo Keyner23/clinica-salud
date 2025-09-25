@@ -13,14 +13,15 @@ This is a pet management system, where you can create a new patient (pet), searc
 
 ## 📁 Project structure
 ```bash
-TEST4/
-│
+CLINICA-SALUD/
 ├── models/ 
 │       ...
 ├── services/ 
 │       ...
-├── Program 
+├── clinica-salud.csproj
+├── clinica-salud.sln
 ├── LICENSE
+├── Program.cs
 └── README.md
 ```
 
