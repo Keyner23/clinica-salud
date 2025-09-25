@@ -54,7 +54,7 @@ public class PatientService
 
         patients.Add(patient);
         Console.WriteLine("");
-        Console.WriteLine("Paciente registrado exitosamente...");
+        Console.WriteLine("Paciente registrado exitosamente....");
         Console.WriteLine("------------------------------------------");
     }
 
