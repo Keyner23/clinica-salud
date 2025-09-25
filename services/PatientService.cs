@@ -62,7 +62,7 @@ public class PatientService
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+            Console.WriteLine("Ocurrió un error inesperado:  " + ex.Message);
         }
     }
 
