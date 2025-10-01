@@ -35,25 +35,25 @@ public class PatientService
             }
 
 
-            Console.WriteLine("Ingrese la edad del paciente:");
-            if (!int.TryParse(Console.ReadLine(), out int age))
+            Console.WriteLine("Ingrese el numero de telefono");
+            if (!int.TryParse(Console.ReadLine(), out int phone))
             {
                 Console.WriteLine("Error: La edad debe ser un número entero.");
                 return;
             }
 
 
-            Console.WriteLine("Ingrese los síntomas del paciente:");
-            string? symptoms = Console.ReadLine();
+            Console.WriteLine("Ingrese la direccion:");
+            string? address = Console.ReadLine();
 
 
-            if (string.IsNullOrWhiteSpace(symptoms))
+            if (string.IsNullOrWhiteSpace(address))
             {
-                Console.WriteLine("Advertencia: No se ingresaron síntomas.");
+                Console.WriteLine("Advertencia: No se ingresaro la direccion.");
             }
 
 
-            Patient patient = new Patient(id, name, age, symptoms);
+            Patient patient = new Patient(id, name, address, phone);
             patients.Add(patient);
 
             Console.WriteLine();
@@ -80,7 +80,7 @@ public class PatientService
         Console.WriteLine("\nLista de pacientes:");
         foreach (var patient in patients)
         {
-            Console.WriteLine(patient.MostrarInformacion());
+            Console.WriteLine(patient.ShowInformation());
         }
     }
 
@@ -96,7 +96,7 @@ public class PatientService
         if (patient1 != null)
         {
             Console.WriteLine("Paciente encontrado:");
-            Console.WriteLine(patient1.MostrarInformacion());
+            Console.WriteLine(patient1.ShowInformation());
         }
         else
         {

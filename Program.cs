@@ -19,6 +19,7 @@ do
             Console.WriteLine("----- Registrar paciente -----");
             service.AddPatient();
             break;
+
         case 2:
             Console.WriteLine("");
             Console.WriteLine("---- Lista de  pacientes -----");

@@ -36,7 +36,7 @@ git clone https://github.com/Keyner23/clinica-salud.git
 cd clinica-salud
 ```
 
-1. Initialize the system:
+2. Initialize the system:
 ```bash
 dotnet run
 ```
