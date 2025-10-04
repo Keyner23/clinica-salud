@@ -1,11 +1,12 @@
-
 using clinica_salud.models;
 namespace clinica_salud.services;
+
 
 
 public class PatientService
 {
     List<Patient> patients = new List<Patient>(); // se crea la lista de pacientes
+    private PetService petService;
 
 
     // method to add patients to the list
@@ -104,5 +105,30 @@ public class PatientService
             Console.WriteLine("PACIENTE NO ENCONTRADOOOO.");
         }
         return patient1;
+    }
+    public void AssignPetToPatient(int patientId, string petName)
+    {
+        var patient = patients.FirstOrDefault(p => p.id == patientId);
+        var pet = petService.GetPetByName(petName);
+
+        if (patient == null)
+        {
+            Console.WriteLine("Paciente no encontrado.");
+            return;
+        }
+        if (pet == null)
+        {
+            Console.WriteLine("Mascota no encontrada.");
+            return;
+        }
+
+        patient.AddPet(pet);
+        Console.WriteLine("Mascota asignada al paciente.");
+    }
+
+    // Buscar un paciente por nombre SIN pedir por consola
+    public Patient? GetPatientByName(string name)
+    {
+        return patients.FirstOrDefault(p => p.name == name);
     }
 }

@@ -10,7 +10,8 @@ public class Menu
         Console.WriteLine("1. Registrar paciente");
         Console.WriteLine("2. Listar pacientes");
         Console.WriteLine("3. Buscar paciente");
-        Console.WriteLine("4. Salir");
+        Console.WriteLine("4.Registrar mascota");
+        Console.WriteLine("5. Salir");
         Console.Write("Seleccione una opción: ");
 
         if (int.TryParse(Console.ReadLine(), out int opcion))
@@ -20,7 +21,7 @@ public class Menu
         else
         {
             Console.WriteLine("Opción inválida.");
-            return -1; 
+            return -1;
         }
     }
 }

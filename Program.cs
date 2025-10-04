@@ -4,6 +4,7 @@
 
 int opcion;
 var service = new PatientService(); //creamos la instacia del servicio para reutilizar sus metodos
+var pet = new PetService();
 var menu = new Menu();
 
 
@@ -32,6 +33,11 @@ do
             break;
         case 4:
             Console.WriteLine("");
+            Console.WriteLine("----- Registrar mascota -----");
+            pet.AskAndAddPet(service);
+            break;
+        case 5:
+            Console.WriteLine("");
             Console.WriteLine("-----Saliendo-----");
             break;
         default:
@@ -41,11 +47,11 @@ do
 
     }
 
-    if (opcion != 4)
+    if (opcion != 5)
     {
         Console.WriteLine("\nPresione una tecla para continuar...");
         Console.ReadKey();
     }
 
 
-} while (opcion != 4);
+} while (opcion != 5);
