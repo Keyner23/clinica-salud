@@ -1,7 +1,5 @@
-﻿using clinica_salud.services;
-
-
-
+﻿
+using clinica_salud.services;
 int opcion;
 var service = new PatientService(); //creamos la instacia del servicio para reutilizar sus metodos
 var pet = new PetService();

@@ -2,7 +2,6 @@ using clinica_salud.models;
 namespace clinica_salud.services;
 
 
-
 public class PatientService
 {
     List<Patient> patients = new List<Patient>(); // se crea la lista de pacientes
@@ -54,7 +53,7 @@ public class PatientService
             }
 
 
-            Patient patient = new Patient(id, name, address, phone);
+            Patient patient = new(id, name, address, phone);
             patients.Add(patient);
 
             Console.WriteLine();
