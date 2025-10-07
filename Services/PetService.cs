@@ -1,3 +1,4 @@
+using clinica_salud.Interfaces;
 using clinica_salud.models;
 
 
@@ -5,37 +6,35 @@ namespace clinica_salud.services
 {
     public class PetService
     {
-        private List<Pet> pets = new List<Pet>();
+        private readonly IPetRepository petRepository;
+
+        public PetService(IPetRepository petRepository)
+        {
+            this.petRepository = petRepository;
+        }
 
         public void AddPet(Pet pet)
         {
-            pets.Add(pet);
+            petRepository.AddPet(pet);
             Console.WriteLine("Mascota agregada correctamente.");
         }
 
         public List<Pet> GetAllPets()
         {
-            return pets;
+            return petRepository.GetAllPets();
         }
 
         public Pet GetPetByName(string name)
         {
-            return pets.FirstOrDefault(p => p.name == name);
+            return petRepository.GetPetByName(name);
         }
 
         public bool RemovePet(string name)
         {
-            var pet = GetPetByName(name);
-            if (pet != null)
-            {
-                pets.Remove(pet);
-                return true;
-            }
-            return false;
+            return petRepository.RemovePet(name);
         }
 
-
-        //method create pet with pacient
+        // Método para crear mascota con paciente
         public void AskAndAddPet(PatientService patientService)
         {
             Console.Write("Ingrese el nombre del dueño: ");

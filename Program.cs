@@ -1,13 +1,23 @@
 ﻿
-using clinica_salud.services;
-int opcion;
-var service = new PatientService(); //creamos la instacia del servicio para reutilizar sus metodos
-var pet = new PetService();
-var menu = new Menu();
 
+using clinica_salud.Interfaces;
+using clinica_salud.repositories;
+using clinica_salud.services;
+
+
+
+var patientRepository = new PatientRepository();
+var petRepository = new PetRepository();
+
+
+var petService = new PetService(petRepository);
+var patientService = new PatientService(patientRepository, petService);
+
+
+var menu = new Menu();
+int opcion;
 
 do
-
 {
     opcion = menu.showMenu();
 
@@ -16,33 +26,36 @@ do
         case 1:
             Console.WriteLine("");
             Console.WriteLine("----- Registrar paciente -----");
-            service.AddPatient();
+            patientService.AddPatient();
             break;
 
         case 2:
             Console.WriteLine("");
             Console.WriteLine("---- Lista de  pacientes -----");
-            service.ShowPatients();
+            patientService.ShowPatients();
             break;
+
         case 3:
             Console.WriteLine("");
             Console.WriteLine("----- Paciente buscado -----");
-            service.SearchPatient("");
+            patientService.SearchPatient("");
             break;
+
         case 4:
             Console.WriteLine("");
             Console.WriteLine("----- Registrar mascota -----");
-            pet.AskAndAddPet(service);
+            petService.AskAndAddPet(patientService);
             break;
+
         case 5:
             Console.WriteLine("");
             Console.WriteLine("-----Saliendo-----");
             break;
+
         default:
             Console.WriteLine("");
             Console.WriteLine("-----Opción no válida-----");
             break;
-
     }
 
     if (opcion != 5)
@@ -50,6 +63,5 @@ do
         Console.WriteLine("\nPresione una tecla para continuar...");
         Console.ReadKey();
     }
-
 
 } while (opcion != 5);
