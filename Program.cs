@@ -1,6 +1,4 @@
 ﻿
-
-using clinica_salud.Interfaces;
 using clinica_salud.repositories;
 using clinica_salud.services;
 

@@ -48,10 +48,10 @@ namespace clinica_salud.services
             }
 
             Console.Write("Ingrese el nombre de la mascota: ");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine() ?? string.Empty;
 
             Console.Write("Ingrese la especie de la mascota: ");
-            string species = Console.ReadLine();
+            string species = Console.ReadLine() ?? string.Empty;
 
             Console.Write("Ingrese la raza de la mascota: ");
             string race = Console.ReadLine();
@@ -75,8 +75,6 @@ namespace clinica_salud.services
             AddPet(newPet);
 
             owner.AddPet(newPet);
-
-            Console.WriteLine($"Mascota agregada correctamente al paciente {dueño}.");
         }
     }
 }
