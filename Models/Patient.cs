@@ -1,13 +1,14 @@
+using clinica_salud.Models;
 namespace clinica_salud.models;
 
-public class Patient
+
+
+public class Patient : Person
 {
     public int id { get; set; }
-    public string name { get; set; }
-    public string address { get; set; }
-    public int phone { get; set; }
 
     public List<Pet> pets { get; set; }
+
 
     public Patient(int id, string name, string address, int phone)
     {
@@ -22,7 +23,7 @@ public class Patient
     {
         pets.Add(pet);
     }
-    public string ShowInformation()
+    public override string ShowInformation()
     {
         string petInfo = pets.Count > 0
             ? string.Join("\n", pets.Select(p => $"  - {p.ShowInformation()}"))

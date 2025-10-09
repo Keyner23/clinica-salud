@@ -10,8 +10,10 @@ public class Menu
         Console.WriteLine("1. Registrar paciente");
         Console.WriteLine("2. Listar pacientes");
         Console.WriteLine("3. Buscar paciente");
-        Console.WriteLine("4.Registrar mascota");
-        Console.WriteLine("5. Salir");
+        Console.WriteLine("4. Registrar mascota");
+        Console.WriteLine("5. Registrar veterinario");
+        Console.WriteLine("6. Ver todos los veterinarios");
+        Console.WriteLine("7. Salir");
         Console.Write("Seleccione una opción: ");
 
         if (int.TryParse(Console.ReadLine(), out int opcion))
