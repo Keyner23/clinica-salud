@@ -89,11 +89,13 @@ public class PatientService
         var patient = _patientRepository.GetPatientByName(name);
         if (patient != null)
         {
+            Console.WriteLine("");
             Console.WriteLine("Paciente encontrado:");
             Console.WriteLine(patient.ShowInformation());
         }
         else
         {
+            Console.WriteLine("");
             Console.WriteLine("Paciente no encontrado.");
         }
         return patient;
