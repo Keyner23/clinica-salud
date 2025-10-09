@@ -19,10 +19,10 @@ public class PetService
         Console.WriteLine("Mascota agregada correctamente.");
     }
 
-    public List<Pet> GetAllPets()
-    {
-        return petRepository.GetAllPets();
-    }
+    // public List<Pet> GetAllPets()
+    // {
+    //     return petRepository.GetAllPets();
+    // }
 
     public Pet GetPetByName(string name)
     {

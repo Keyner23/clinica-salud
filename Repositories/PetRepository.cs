@@ -1,38 +1,38 @@
 using clinica_salud.Interfaces;
 using clinica_salud.models;
-namespace clinica_salud.repositories
+namespace clinica_salud.repositories;
 
 
+
+public class PetRepository : IPetRepository
 {
-    public class PetRepository : IPetRepository
+    private List<Pet> pets = new List<Pet>();
+
+    public void AddPet(Pet pet)
     {
-        private List<Pet> pets = new List<Pet>();
+        pets.Add(pet);
+    }
 
-        public void AddPet(Pet pet)
-        {
-            pets.Add(pet);
-        }
+    // public List<Pet> GetAllPets()
+    // {
+    //     return pets;
+    // }
 
-        public List<Pet> GetAllPets()
-        {
-            return pets;
-        }
+    public Pet GetPetByName(string name)
+    {
+        return pets.FirstOrDefault(p => p.name == name);
+    }
 
-        public Pet GetPetByName(string name)
+    public bool RemovePet(string name)
+    {
+        var pet = GetPetByName(name);
+        if (pet != null)
         {
-            return pets.FirstOrDefault(p => p.name == name);
+            pets.Remove(pet);
+            return true;
         }
-
-        public bool RemovePet(string name)
-        {
-            var pet = GetPetByName(name);
-            if (pet != null)
-            {
-                pets.Remove(pet);
-                return true;
-            }
-            return false;
-        }
+        return false;
     }
 }
+
 
