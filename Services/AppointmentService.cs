@@ -108,4 +108,38 @@ public class AppointmentService
             Console.WriteLine();
         }
     }
+
+
+    public List<Appointment> GetAppointmentsByPetName(string petName)
+    {
+        return _appointmentRepository.GetAppointmentsByPetName(petName);
+    }
+
+
+    public void ShowAppointmentsByPetName(string petName)
+    {
+        var appointments = _appointmentRepository.GetAppointmentsByPetName(petName);
+
+        Console.WriteLine("\n------------------------------------");
+
+        if (appointments.Any())
+        {
+            Console.WriteLine($"Citas encontradas para la mascota '{petName}':\n");
+
+            foreach (var appt in appointments)
+            {
+                Console.WriteLine(appt.ShowInformation());
+                Console.WriteLine("------------------------------------");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"No se encontraron citas para la mascota '{petName}'.");
+        }
+
+        Console.WriteLine("------------------------------------");
+    }
+
+
+
 }

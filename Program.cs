@@ -52,11 +52,18 @@ do
                     appoimentService.AddAppointment();
                     break;
                 case 5:
+                    Console.WriteLine("----- VER MIS CITAS MASCOTA -----");
+                    Console.Write("Ingrese el nombre de su mascota: ");
+                    string petName = Console.ReadLine() ?? "";
+                    appoimentService.ShowAppointmentsByPetName(petName);
+                    break;
+
+                case 6:
                     Console.WriteLine("----- VOLVIENDO AL MENU PRINCIPAL -----");
                     rol = menu.ShowRoleMenu();
                     break;
 
-                case 6:
+                case 7:
                     Console.WriteLine("----- SALIENDO DEL SISTEMA -----");
                     salir = true;
                     break;

@@ -27,8 +27,9 @@ public class Menu
         Console.WriteLine("2. Ver mi información");
         Console.WriteLine("3. Registrar nueva mascota");
         Console.WriteLine("4. Crear una cita");
-        Console.WriteLine("5. Volver al menu principal");
-        Console.WriteLine("6. Salir");
+        Console.WriteLine("5. Ver mis citas");
+        Console.WriteLine("6. Volver al menu principal");
+        Console.WriteLine("7. Salir");
 
         Console.Write("Seleccione una opción: ");
         return int.TryParse(Console.ReadLine(), out int opcion) ? opcion : 0;
