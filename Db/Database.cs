@@ -8,4 +8,6 @@ public class Database
     public static List<Patient> patients = [];
     public static List<Pet> pets = [];
     public static List<Veterinarian> veterinarians = [];
+
+    public static List<Appointment> appoiments = [];
 }

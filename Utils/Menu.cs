@@ -23,10 +23,13 @@ public class Menu
     {
         Console.Clear();
         Console.WriteLine("=== MENÚ CLIENTE ===");
-        Console.WriteLine("1. Registrar dueño");
-        Console.WriteLine("2. Buscar paciente");
-        Console.WriteLine("3. Registrar mascota");
-        Console.WriteLine("4. Salir");
+        Console.WriteLine("1. Registrarse como dueño");
+        Console.WriteLine("2. Ver mi información");
+        Console.WriteLine("3. Registrar nueva mascota");
+        Console.WriteLine("4. Crear una cita");
+        Console.WriteLine("5. Volver al menu principal");
+        Console.WriteLine("6. Salir");
+
         Console.Write("Seleccione una opción: ");
         return int.TryParse(Console.ReadLine(), out int opcion) ? opcion : 0;
     }
@@ -36,7 +39,8 @@ public class Menu
         Console.Clear();
         Console.WriteLine("=== MENÚ VETERINARIO ===");
         Console.WriteLine("1. Registrarse como veterinario");
-        Console.WriteLine("2. Salir");
+        Console.WriteLine("2. Volver al menu principal");
+        Console.WriteLine("3. Salir");
         Console.Write("Seleccione una opción: ");
         return int.TryParse(Console.ReadLine(), out int opcion) ? opcion : 0;
     }
@@ -46,14 +50,16 @@ public class Menu
     {
         Console.Clear();
         Console.WriteLine("=== BIENVENIDOS A LA VETERINARIA KABO-PETS ===");
-        Console.WriteLine("");
-        Console.WriteLine("1. Registrar paciente");
-        Console.WriteLine("2. Listar pacientes");
-        Console.WriteLine("3. Buscar paciente");
+        Console.WriteLine("=== MENU ADMINISTRADOR ===");
+        Console.WriteLine("1. Registrar nuevo paciente");
+        Console.WriteLine("2. Ver pacientes");
+        Console.WriteLine("3. Buscar paciente por nombre");
         Console.WriteLine("4. Registrar mascota");
-        Console.WriteLine("5. Registrar veterinario");
-        Console.WriteLine("6. Ver todos los veterinarios");
-        Console.WriteLine("7. Salir");
+        Console.WriteLine("5. Registrar nuevo veterinario");
+        Console.WriteLine("6. Ver veterinarios");
+        Console.WriteLine("7. Ver citas");
+        Console.WriteLine("8. Volver al menu principal");
+        Console.WriteLine("9. Salir");
         Console.Write("Seleccione una opción: ");
 
         if (int.TryParse(Console.ReadLine(), out int opcion))

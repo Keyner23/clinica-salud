@@ -14,7 +14,7 @@ IVeterinarianRepository veterinarian = new VeterinarianRepository();
 var petService = new PetService(petRepository);
 var patientService = new PatientService(patientRepository, petService);
 var veterinarianService = new VeterinarianService(veterinarian);
-
+var appoimentService = new AppointmentService(new AppointmentRepository());
 
 
 var menu = new Menu();
@@ -48,6 +48,15 @@ do
                     petService.AskAndAddPet(patientService);
                     break;
                 case 4:
+                    Console.WriteLine("----- CREAR CITA -----");
+                    appoimentService.AddAppointment();
+                    break;
+                case 5:
+                    Console.WriteLine("----- VOLVIENDO AL MENU PRINCIPAL -----");
+                    rol = menu.ShowRoleMenu();
+                    break;
+
+                case 6:
                     Console.WriteLine("----- SALIENDO DEL SISTEMA -----");
                     salir = true;
                     break;
@@ -67,6 +76,10 @@ do
                     veterinarianService.AddVeterinarian();
                     break;
                 case 2:
+                    Console.WriteLine("----- VOLVIENDO AL MENU PRINCIPAL -----");
+                    rol = menu.ShowRoleMenu();
+                    break;
+                case 3:
                     Console.WriteLine("----- SALIENDO DEL SISTEMA -----");
                     salir = true;
                     break;
@@ -107,7 +120,16 @@ do
                     Console.WriteLine("----- VER VETERINARIOS -----");
                     veterinarianService.ShowVeterinarian();
                     break;
+
                 case 7:
+                    Console.WriteLine("----- VER CITAS -----");
+                    appoimentService.GetAllAppoiments();
+                    break;
+                case 8:
+                    Console.WriteLine("----- VOLVIENDO AL MENU PRINCIPAL -----");
+                    rol = menu.ShowRoleMenu();
+                    break;
+                case 9:
                     Console.WriteLine("----- SALIENDO DEL SISTEMA -----");
                     salir = true;
                     break;

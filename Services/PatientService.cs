@@ -91,6 +91,7 @@ public class PatientService
         {
             Console.WriteLine("");
             Console.WriteLine("Paciente encontrado:");
+            Console.WriteLine("");
             Console.WriteLine(patient.ShowInformation());
         }
         else
@@ -116,7 +117,7 @@ public class PatientService
             Console.WriteLine("Mascota no encontrada.");
             return;
         }
-
+        Console.WriteLine("");
         patient.AddPet(pet);
         Console.WriteLine("Mascota asignada al paciente.");
     }
